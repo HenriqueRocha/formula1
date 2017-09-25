@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int points (int place);
-int isbtwn(int n, int lb, int ub);
+int sorted3(int x, int y, int z);
 
 int main()
 {
@@ -20,12 +20,12 @@ int main()
 
 int points(int place)
 {
-  return isbtwn(place, 1, 2) * (14 - 4 * place) +
-          isbtwn(place, 3, 6) * (7 - place);
+  return sorted3(1, place, 2) * (12 - 2 * place) +
+          sorted3(3, place, 8) * (9 - place);
 }
 
-int isbtwn(int n, int lb, int ub)
+int sorted3(int x, int y, int z)
 {
-  return lb <= n && n <= ub;
+  return x <= y && y <= z;
 }
 
