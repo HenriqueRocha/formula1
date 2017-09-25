@@ -1,6 +1,6 @@
-/* Pontos numa corrida de F1; terceira versão */
-
 #include <stdio.h>
+
+int points (int place);
 
 int main()
 {
@@ -8,30 +8,7 @@ int main()
   int pts;
   printf("Qual é o lugar? ");
   scanf("%d", &place);
-  switch (place) {
-  case 1:
-    pts = 10;
-    break;
-  case 2:
-    pts = 6;
-    break;
-  case 3:
-    pts = 4;
-    break;
-  case 4:
-    pts = 3;
-    break;
-  case 5:
-    pts = 2;
-    break;
-  case 6:
-    pts = 1;
-    break;
-  default:
-    pts = 0;
-    break;
-  }
-
+  pts = points(place);
   if (pts > 1)
     printf("Ganhou %d pontos.\n", pts);
   else if (pts == 1)
@@ -40,5 +17,25 @@ int main()
     printf("Não ganhou pontos.\n");
 
   return 0;
+}
+
+int points(int place)
+{
+  switch (place) {
+  case 1:
+    return 10;
+  case 2:
+    return 6;
+  case 3:
+    return 4;
+  case 4:
+    return 3;
+  case 5:
+    return 2;
+  case 6: 
+    return 1;
+  default:
+    return 0;
+  }
 }
 
