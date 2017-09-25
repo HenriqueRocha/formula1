@@ -21,13 +21,11 @@ int main()
 
 int points(int place)
 {
-  switch (place) {
-  case 1: case 2:
+  if (place <= 2)
     return 14 - 4 * place;
-  case 3: case 4: case 5: case 6: 
+  else if (place <= 6)
     return 7 - place;
-  default:
+  else
     return 0;
-  }
 }
 
