@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int points (int place);
+int ntrl(int);
 
 int main()
 {
@@ -21,11 +22,11 @@ int main()
 
 int points(int place)
 {
-  if (place <= 2)
-    return 14 - 4 * place;
-  else if (place <= 6)
-    return 7 - place;
-  else
-    return 0;
+  return place <= 2 ? 14 - 4 * place : ntrl(7 - place);
+}
+
+int ntrl(int n)
+{
+  return n >= 0 ? n : 0;
 }
 
