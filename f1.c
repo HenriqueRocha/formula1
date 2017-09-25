@@ -10,10 +10,8 @@ int main()
   printf("Qual é o lugar? ");
   scanf("%d", &place);
   pts = points(place);
-  if (pts > 1)
-    printf("Ganhou %d pontos.\n", pts);
-  else if (pts == 1)
-    printf("Ganhou 1 ponto.\n");
+  if (pts)
+    printf("Ganhou %d ponto%s.\n", pts, pts == 1 ? "" : "s");
   else
     printf("Não ganhou pontos.\n");
 
