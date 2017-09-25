@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int points (int place);
-int ntrl(int);
+int isbtwn(int n, int lb, int ub);
 
 int main()
 {
@@ -20,11 +20,12 @@ int main()
 
 int points(int place)
 {
-  return place <= 2 ? 14 - 4 * place : ntrl(7 - place);
+  return isbtwn(place, 1, 2) * (14 - 4 * place) +
+          isbtwn(place, 3, 6) * (7 - place);
 }
 
-int ntrl(int n)
+int isbtwn(int n, int lb, int ub)
 {
-  return n >= 0 ? n : 0;
+  return lb <= n && n <= ub;
 }
 
